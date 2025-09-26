@@ -4,9 +4,8 @@ import {
 	INodeType,
 	INodeTypeDescription,
 	NodeConnectionType,
+	sleep,
 } from 'n8n-workflow';
-
-import { setTimeout as sleep } from 'node:timers/promises';
 
 type Action = 'create' | 'publish';
 type MediaKind = 'REEL' | 'IMAGE';
@@ -247,6 +246,9 @@ export class InstagramCreatePublishMedia implements INodeType {
 		return [out];
 	}
 }
+
+
+
 
 
 

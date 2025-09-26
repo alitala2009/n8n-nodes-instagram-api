@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InstagramCreatePublishMedia = void 0;
-const promises_1 = require("node:timers/promises");
+const n8n_workflow_1 = require("n8n-workflow");
 class InstagramCreatePublishMedia {
     constructor() {
         this.description = {
@@ -163,7 +163,7 @@ class InstagramCreatePublishMedia {
                                 break;
                             if (String(status).toUpperCase() === 'READY')
                                 break;
-                            await (0, promises_1.setTimeout)(3000);
+                            await (0, n8n_workflow_1.sleep)(3000);
                         }
                     }
                     let autoPublishResult;
