@@ -6,6 +6,8 @@ import {
 	NodeConnectionType,
 } from 'n8n-workflow';
 
+import { setTimeout as sleep } from 'node:timers/promises';
+
 type Action = 'create' | 'publish';
 type MediaKind = 'REEL' | 'IMAGE';
 
@@ -122,8 +124,6 @@ export class InstagramCreatePublishMedia implements INodeType {
 		if (!accessToken) throw new Error('instagramApi credential is missing accessToken');
 
 		const BASE = 'https://graph.facebook.com/v23.0';
-		const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-
 		for (let i = 0; i < items.length; i++) {
 			const action = this.getNodeParameter('action', i) as Action;
 			const igId = String(this.getNodeParameter('igId', i)).trim();
@@ -247,3 +247,6 @@ export class InstagramCreatePublishMedia implements INodeType {
 		return [out];
 	}
 }
+
+
+

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InstagramCreatePublishMedia = void 0;
+const promises_1 = require("node:timers/promises");
 class InstagramCreatePublishMedia {
     constructor() {
         this.description = {
@@ -111,7 +112,6 @@ class InstagramCreatePublishMedia {
         if (!accessToken)
             throw new Error('instagramApi credential is missing accessToken');
         const BASE = 'https://graph.facebook.com/v23.0';
-        const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         for (let i = 0; i < items.length; i++) {
             const action = this.getNodeParameter('action', i);
             const igId = String(this.getNodeParameter('igId', i)).trim();
@@ -163,7 +163,7 @@ class InstagramCreatePublishMedia {
                                 break;
                             if (String(status).toUpperCase() === 'READY')
                                 break;
-                            await sleep(3000);
+                            await (0, promises_1.setTimeout)(3000);
                         }
                     }
                     let autoPublishResult;
