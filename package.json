@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-instagram-api",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Custom n8n nodes for Instagram Reels and Messaging",
   "keywords": [
     "n8n-community-node-package",
@@ -12,10 +12,10 @@
   "license": "MIT",
   "author": "Ali Tala",
   "files": [
-  "dist",
-  "icons",
-  "src"
-],
+    "dist",
+    "icons",
+    "src"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
