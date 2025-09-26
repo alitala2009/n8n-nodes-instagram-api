@@ -1,0 +1,44 @@
+{
+  "name": "n8n-nodes-instagram-api",
+  "version": "0.1.2",
+  "description": "Custom n8n nodes for Instagram Reels and Messaging",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "instagram",
+    "reels",
+    "messaging"
+  ],
+  "license": "MIT",
+  "author": "Ali Tala",
+  "files": [
+    "dist",
+    "icons"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "n8n-workflow": "^1.82.0",
+    "@types/node": "^20.0.0"
+  },
+  "n8n": {
+    "nodes": [
+      "dist/nodes/InstagramCommentReply.node.js",
+      "dist/nodes/InstagramCreatePublishMedia.node.js",
+      "dist/nodes/InstagramPublish.node.js",
+      "dist/nodes/InstagramReels.node.js",
+      "dist/nodes/InstagramSendImage.node.js",
+      "dist/nodes/InstagramSendMedia.node.js",
+      "dist/nodes/InstagramSendMessage.node.js",
+      "dist/nodes/InstagramSendQuickReplies.node.js"
+    ],
+    "credentials": [
+      "dist/credentials/InstagramApi.credentials.js"
+    ]
+  }
+}
